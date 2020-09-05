@@ -4,8 +4,9 @@ do
 	clear # clear screen for each loop of menu
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 2.2 ---"
+	echo " --- Pop!_OS Setup Script 2.3 ---"
 	echo "=================================="
+	echo "Supported Pop!_OS Versions: 20.04 LTS"
 	tput setaf 2; echo "Script created by Nathan Viroonchatapan."
 	tput setaf 2; echo "All due credit and respect to Tyler Broad, for his work on the Release 2 codebase."
 	tput setaf 3; echo "You can open this script in a text editor to see packages to be installed in detail."
