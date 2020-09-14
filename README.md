@@ -4,19 +4,17 @@ Bash Script to Set Up a Fresh Install of Pop!_OS 20.04 and above.
 
 # Documentation
 
-Version 2.3
+Version 3.0
 
 Supported Pop!_OS Versions: 20.04 LTS
 
-*Please install .deb files and files using other types of installation formats using files manually.
+**Please Run Script After Following Instructions Here**
 
-*Please copy the TTF Essential Font Pack from Extras into `/usr/share/fonts/` Use `sudo nautilus` to open the file manager as root. This is required to perform these actions as this is modifying files on the system level. https://mega.nz/folder/4Rw3xb4K#6VB4b8WRnCUO3UMLNKdVXw
+Please install .deb files and files using other types of installation formats using files manually (if you have them).
 
-*Backup of home folder is for files only. Settings must be set manually. There are only some special case exceptions to this.
+Please copy the TTF Essential Font Pack from Extras at https://mega.nz/folder/cRZTkAJD#dV8CG6th0a-10Fu6yCG-5Q into `/usr/share/fonts/` Use `sudo nautilus` to open the file manager as root. This is required to perform these actions as this is modifying files on the system level.
 
-*Please add yourself to `vboxusers` using `sudo usermod -a -G vboxusers $USER` and then reboot.
-
-Setup Firewall
+Please add yourself to `vboxusers` using `sudo usermod -a -G vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed.
 
 
 # Keyboard Shortcuts:
@@ -32,3 +30,8 @@ Refer to image for media controls on desktop keyboards.
 
 # Media Shortcuts Image:
 ![Error](https://raw.githubusercontent.com/TechnologyMan101/pop-os-setup-script/master/Media_Shortcuts_Desktop_Pop.png)
+
+
+# VM Users
+
+Minimal Install is recommended. VM Tools can be found at  https://mega.nz/folder/cRZTkAJD#dV8CG6th0a-10Fu6yCG-5Q in Extras.
