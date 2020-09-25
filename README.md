@@ -4,7 +4,7 @@ Bash Script to Set Up a Fresh Install of Pop!_OS 20.04 and above.
 
 # Documentation
 
-Version 3.1
+Version 3.2
 
 Supported Pop!_OS Versions: 20.04 LTS
 
@@ -14,7 +14,7 @@ Please install .deb files and files using other types of installation formats us
 
 Please copy the TTF Essential Font Pack from Extras at https://mega.nz/folder/cRZTkAJD#dV8CG6th0a-10Fu6yCG-5Q into `/usr/share/fonts/` Use `sudo nautilus` to open the file manager as root. This is required to perform these actions as this is modifying files on the system level.
 
-Please add yourself to `vboxusers` using `sudo usermod -a -G vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed.
+Please add yourself to `vboxusers` using `sudo usermod -aG vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed.
 
 
 # Keyboard Shortcuts:
