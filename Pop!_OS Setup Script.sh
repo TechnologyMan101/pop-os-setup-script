@@ -4,7 +4,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "===================================="
-	echo " --- Pop!_OS Setup Script 3.2.1 ---"
+	echo " --- Pop!_OS Setup Script 3.2.2 ---"
 	echo "===================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
@@ -46,6 +46,7 @@ badoption () {
 	echo "Returning to Main Menu..."
 	tput sgr0
 	sleep 3
+	mainmenu
 }
 finish () {
 	clear
