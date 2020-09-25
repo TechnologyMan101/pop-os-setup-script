@@ -3,9 +3,9 @@
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "=================================="
-	echo " --- Pop!_OS Setup Script 3.2 ---"
-	echo "=================================="
+	echo "===================================="
+	echo " --- Pop!_OS Setup Script 3.2.1 ---"
+	echo "===================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	tput setaf 10
@@ -15,6 +15,7 @@ mainmenu () {
 	tput setaf 9
 	echo "System will automatically reboot after the script is run!!!"
 	echo "It is not recommended to run this script more than once!!!"
+	echo "Make sure you have a stable and fast Internet connection before proceeding!!!"
 	tput setaf 3
 	echo "Press 1 to perform a Full Install (All User Packages)"
 	echo "Press 2 to perform a Minimal Install (Essentials)"
