@@ -4,11 +4,13 @@ Bash Script to Set Up a Fresh Install of Pop!_OS 20.04 and above.
 
 # Documentation
 
-Version 3.3
+Version 3.3.1
 
 Supported Pop!_OS Versions: 20.04 LTS
 
 **Please Run Script After Following Instructions Here**
+
+**The Extras folder also contains other tools you may want including font packs.**
 
 Please install .deb files and files using other types of installation formats using files manually (if you have them).
 
