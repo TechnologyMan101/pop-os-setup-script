@@ -3,9 +3,9 @@
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "=================================="
-	echo " --- Pop!_OS Setup Script 3.3 ---"
-	echo "=================================="
+	echo "===================================="
+	echo " --- Pop!_OS Setup Script 3.3.1 ---"
+	echo "===================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	tput setaf 10
