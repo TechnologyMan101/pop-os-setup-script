@@ -3,10 +3,10 @@
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "=================================="
-	echo " --- Pop!_OS Setup Script 3.4 ---"
-	echo "=================================="
-	echo "Supported Pop!_OS Versions: 20.04 LTS"
+	echo "===================================="
+	echo " --- Pop!_OS Setup Script 3.5.1 ---"
+	echo "===================================="
+	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	tput setaf 3
 	echo "You can open this script in a text editor to see packages to be installed in detail."
@@ -81,8 +81,8 @@ full () {
 	sudo apt install -y obs-studio
 	sudo add-apt-repository -y ppa:minetestdevs/stable
 	sudo apt install -y minetest
-	curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 	sudo apt update -y
 	sudo apt install -y spotify-client
 	sudo apt update -y
