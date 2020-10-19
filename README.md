@@ -1,5 +1,5 @@
 # pop-os-setup-script
-Bash Script to Set Up a Fresh Install of Pop!_OS 20.04 and above.
+Bash script to set up a fresh install of Pop!_OS.
 
 
 # Documentation
