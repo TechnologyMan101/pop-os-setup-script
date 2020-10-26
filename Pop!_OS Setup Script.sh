@@ -4,7 +4,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 3.6 ---"
+	echo " --- Pop!_OS Setup Script 3.7 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
@@ -70,7 +70,7 @@ full () {
 	sudo dpkg-reconfigure libdvd-pkg
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo add-apt-repository -y ppa:linuxuprising/java
-	sudo apt install -y oracle-java14-installer
+	sudo apt install -y oracle-java15-installer
 	java --version
 	sleep 3
 	java -version
@@ -88,6 +88,9 @@ full () {
 	sudo apt autoremove -y
 	sudo apt autoclean -y
 	sudo usermod -aG cdrom $USER
+	echo "[Desktop Entry]
+	Hidden=true" > /tmp/1
+	find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
 	finish
 }
 minimal () {
