@@ -3,9 +3,9 @@
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "==================================="
-	echo " --- Pop!_OS Setup Script 3.10 ---"
-	echo "==================================="
+	echo "====================================="
+	echo " --- Pop!_OS Setup Script 3.10.1 ---"
+	echo "====================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	echo "This script will show terminal output. This is normal."
@@ -23,7 +23,6 @@ mainmenu () {
 	echo "Press Q to quit"
 	tput sgr0
 	echo "Enter your selection followed by <return>:"
-	tput sgr0
 	read answer
 	case "$answer" in
 		1) full;;
