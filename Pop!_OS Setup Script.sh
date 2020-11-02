@@ -3,9 +3,9 @@
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "====================================="
-	echo " --- Pop!_OS Setup Script 3.10.1 ---"
-	echo "====================================="
+	echo "==================================="
+	echo " --- Pop!_OS Setup Script 3.11 ---"
+	echo "==================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	echo "This script will show terminal output. This is normal."
@@ -86,7 +86,7 @@ full () {
 	sudo apt install -y spotify-client
 	sudo apt update -y
 	sudo apt full-upgrade -y
-	sudo apt autoremove -y
+	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
 	echo "Adding current user to cdrom group..."
 	sudo usermod -aG cdrom $USER
@@ -111,7 +111,7 @@ minimal () {
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo apt update -y
 	sudo apt full-upgrade -y
-	sudo apt autoremove -y
+	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
 	finish
 }
