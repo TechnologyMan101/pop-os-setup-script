@@ -30,6 +30,11 @@ Add shortcut to open “gnome-system-monitor” with “Super+Backspace”
 Refer to image for media controls on desktop keyboards.
 
 
+# Run Script:
+
+Mark the script as executable by changing it in file properties or running `chmod +x /path/to/file`. Then run it in Terminal with `bash /path/to/file`
+
+
 # Media Shortcuts Image:
 ![Error](https://raw.githubusercontent.com/TechnologyMan101/pop-os-setup-script/master/Media_Shortcuts_Desktop_Pop.png)
 
