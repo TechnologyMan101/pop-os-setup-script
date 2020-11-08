@@ -4,7 +4,7 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 3.12
+Version 3.13
 
 Supported Pop!_OS Versions: 20.04 LTS, 20.10
 
