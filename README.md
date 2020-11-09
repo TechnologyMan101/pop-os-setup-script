@@ -1,4 +1,4 @@
-# pop-os-setup-script
+# The-best-pop-os-setup-script-for-fresh-installs
 Bash script to set up a fresh install of Pop!_OS.
 
 
