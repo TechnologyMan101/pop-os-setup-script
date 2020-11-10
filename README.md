@@ -1,10 +1,10 @@
-# pop-os-setup-script
+# Pop!_OS Setup Script
 Bash script to set up a fresh install of Pop!_OS.
 
 
 # Documentation
 
-Version 3.13
+Version 3.14
 
 Supported Pop!_OS Versions: 20.04 LTS, 20.10
 
