@@ -4,7 +4,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 3.17 ---"
+	echo " --- Pop!_OS Setup Script 3.18 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
@@ -85,7 +85,7 @@ full () {
 	sudo apt update -y
 	sudo apt install -y spotify-client
 	sudo apt update -y
-	sudo apt full-upgrade -y
+	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
 	echo "Adding current user to cdrom group..."
@@ -110,7 +110,7 @@ minimal () {
 	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo apt update -y
-	sudo apt full-upgrade -y
+	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
 	finish
