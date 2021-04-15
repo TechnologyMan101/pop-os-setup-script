@@ -4,7 +4,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 3.19 ---"
+	echo " --- Pop!_OS Setup Script 3.20 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions: 20.04 LTS, 20.10"
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
@@ -68,7 +68,7 @@ full () {
 	sudo apt update -y
 	sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg
 	sudo dpkg-reconfigure libdvd-pkg
-	sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart speedtest-cli grub2-common neofetch network-manager-openvpn-gnome ffmpeg httraqt lsp-plugins tree audacity telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo pitivi gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop transmission curl git handbrake minetest gtk-3-examples youtube-dl menulibre nautilus-admin pip
+	sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg httraqt lsp-plugins tree audacity telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo pitivi gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop transmission curl git handbrake minetest gtk-3-examples youtube-dl menulibre nautilus-admin python3-pip
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo add-apt-repository -y ppa:linuxuprising/java
 	sudo apt install -y oracle-java15-installer
@@ -80,15 +80,13 @@ full () {
 	sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
 	sudo add-apt-repository -y ppa:obsproject/obs-studio
 	sudo apt install -y obs-studio
-	curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
-    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-	sudo apt update -y
-	sudo apt install -y spotify-client
+	sudo add-apt-repository ppa:nextcloud-devs/client
+	sudo apt install nextcloud-client
 	sudo apt update -y
 	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
-	pip install youtube-dl
+	pip3 install youtube-dl
 	echo "Adding current user to cdrom group..."
 	sudo usermod -aG cdrom $USER
 	echo "Patching LSP icons..."
