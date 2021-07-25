@@ -34,6 +34,7 @@ Refer to image for media controls on desktop keyboards.
 
 Mark the script as executable by changing it in file properties or running `chmod +x /path/to/file`. Then run it in Terminal with `bash /path/to/file`
 
+
 # GNOME Extensions (from [extensions.gnome.org](https://extensions.gnome.org/)):
 
 This is to be done after running the script!!!
