@@ -4,9 +4,9 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 3.20
+Version 4.0
 
-Supported Pop!_OS Versions: 20.04 LTS, 20.10
+Supported Pop!_OS Versions: 20.04 LTS, 21.04
 
 **Please Run Script After Following Instructions Here**
 
@@ -33,6 +33,15 @@ Refer to image for media controls on desktop keyboards.
 # Run Script:
 
 Mark the script as executable by changing it in file properties or running `chmod +x /path/to/file`. Then run it in Terminal with `bash /path/to/file`
+
+# GNOME Extensions (from [extensions.gnome.org](https://extensions.gnome.org/)):
+
+This is to be done after running the script!!!
+
+- [Applications Overview Tooltip](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
+- [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
+- [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 
 
 # Media Shortcuts Image:
