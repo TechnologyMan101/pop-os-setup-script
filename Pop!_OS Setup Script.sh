@@ -59,7 +59,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 4.1 ---"
+	echo " --- Pop!_OS Setup Script 4.2 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.04"
 	tput setaf 10
@@ -148,7 +148,7 @@ full () {
 	flatpak install -y flathub net.minetest.Minetest
 	flatpak update -y
 	flatpak uninstall -y --unused
-	pip3 install pip youtube-dl yt-dlp speedtest-cli sysmontask -U
+	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
 	echo "Adding current user to cdrom group..."
 	sudo usermod -aG cdrom $USER
 	echo "Patching LSP icons..."
@@ -174,7 +174,7 @@ minimal () {
 	sudo apt autoclean -y
 	flatpak update -y
 	flatpak uninstall -y --unused
-	pip3 install pip speedtest-cli sysmontask -U
+	pip3 install pip speedtest-cli -U
 	finish
 }
 common () {
