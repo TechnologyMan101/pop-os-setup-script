@@ -38,7 +38,7 @@ checkcompatibility () {
 sysreqfail () {
 	clear
 	tput setaf 9
-	echo "System requirements not met. This script supports x86_64 versions Pop!_OS with versions 20.04 LTS and 21.04!!!"
+	echo "System requirements not met. This script supports x86_64 versions of Pop!_OS with versions 20.04 LTS and 21.04!!!"
 	tput setaf 3
 	echo "If your error is not caused by a wrong Pop!_OS version or OS architecture, please check to see if I have published a script for your system."
 	tput setaf 10
@@ -58,9 +58,9 @@ sysreqfail () {
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "=================================="
-	echo " --- Pop!_OS Setup Script 4.2 ---"
-	echo "=================================="
+	echo "===================================="
+	echo " --- Pop!_OS Setup Script 4.2.1 ---"
+	echo "===================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.04"
 	tput setaf 10
 	echo "Your current distro is $PRETTY_NAME."
