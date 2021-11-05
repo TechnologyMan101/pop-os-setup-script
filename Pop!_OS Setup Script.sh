@@ -59,7 +59,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 4.3 ---"
+	echo " --- Pop!_OS Setup Script 4.4 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.04"
 	tput setaf 10
@@ -137,8 +137,6 @@ full () {
 	sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
 	sudo add-apt-repository -y ppa:obsproject/obs-studio
 	sudo apt install -y obs-studio
-	sudo add-apt-repository -y ppa:nextcloud-devs/client
-	sudo apt install -y nextcloud-client
 	sudo apt update -y
 	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
