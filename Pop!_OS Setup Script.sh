@@ -59,7 +59,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 4.4 ---"
+	echo " --- Pop!_OS Setup Script 4.5 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.04"
 	tput setaf 10
@@ -164,7 +164,7 @@ minimal () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip
+	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip pulseeffects
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo apt update -y
 	sudo apt full-upgrade -y --allow-downgrades
