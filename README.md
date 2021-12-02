@@ -4,7 +4,7 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 4.7
+Version 4.8
 
 Supported Pop!_OS Versions: 20.04 LTS, 21.04
 
@@ -43,6 +43,7 @@ This is to be done after running the script!!!
 - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 - [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [Jiggle](https://extensions.gnome.org/extension/3438/jiggle/)
 
 
 # Media Shortcuts Image:
