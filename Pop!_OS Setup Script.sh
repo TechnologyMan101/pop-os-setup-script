@@ -15,16 +15,17 @@ checkcompatibility () {
 	
 	# Function cluster for identifying codenames
 	case "$UBUNTU_CODENAME" in
-		"bionic") poposverno="18.04 LTS";;
-		"focal") poposverno="20.04 LTS";;
-		"groovy") poposverno="20.10";;
-		"hirsute") poposverno="21.04";;
-		*) poposverno="UNDEFINED, Contact maintainer";;
+		"bionic")	poposverno="18.04 LTS";;
+		"focal")	poposverno="20.04 LTS";;
+		"groovy")	poposverno="20.10";;
+		"hirsute")	poposverno="21.04";;
+		"impish")	poposverno="21.10";;
+		*)	poposverno="UNDEFINED, Contact maintainer";;
 	esac
 	# End cluster
 
 	# Check for 20.04 and 21.04
-	if ! grep -qie "focal" -e "hirsute" /etc/os-release
+	if ! grep -qie "focal" -e "impish" /etc/os-release
 	then
 		sysreqfail
 	fi
@@ -58,10 +59,10 @@ sysreqfail () {
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "=================================="
-	echo " --- Pop!_OS Setup Script 4.9 ---"
-	echo "=================================="
-	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.04"
+	echo "==================================="
+	echo " --- Pop!_OS Setup Script 4.10 ---"
+	echo "==================================="
+	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.10"
 	tput setaf 10
 	echo "Your current distro is $PRETTY_NAME."
 	echo "Your current Pop!_OS version is $poposverno (Codename: $UBUNTU_CODENAME)."
@@ -143,6 +144,7 @@ full () {
 	flatpak install -y flathub org.audacityteam.Audacity
 	flatpak install -y flathub org.shotcut.Shotcut
 	flatpak install -y flathub net.minetest.Minetest
+	flatpak install -y flathub org.inkscape.Inkscape
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
