@@ -4,9 +4,9 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 4.9
+Version 4.10
 
-Supported Pop!_OS Versions: 20.04 LTS, 21.04
+Supported Pop!_OS Versions: 20.04 LTS, 21.10
 
 **Please Run Script After Following Instructions Here**
 
@@ -39,11 +39,9 @@ Mark the script as executable by changing it in file properties or running `chmo
 
 This is to be done after running the script!!!
 
-- [Applications Overview Tooltip](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
 - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
 - [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/)
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-- [Jiggle](https://extensions.gnome.org/extension/3438/jiggle/)
 
 
 # Media Shortcuts Image:
