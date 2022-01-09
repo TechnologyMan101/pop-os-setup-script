@@ -60,7 +60,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 4.10 ---"
+	echo " --- Pop!_OS Setup Script 4.11 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.10"
 	tput setaf 10
@@ -70,16 +70,20 @@ mainmenu () {
 	tput setaf 3
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	echo "This script will show terminal output. This is normal."
-	echo "You can open this script in a text editor to see packages to be installed in detail."
+	echo "You can open this script in a text editor to view all functions."
 	tput setaf 10
 	echo "You are encouraged to modify this script for your own needs."
 	tput setaf 9
 	echo "System will automatically reboot after the script is run!!!"
-	echo "It is not recommended to run this script more than once unless after a distro upgrade!!!"
+	echo "It is not recommended to run this script more than once!!!"
+	tput setaf 10
+	echo "You may run this script again after an upgrade or to get your system up-to-date with the latest version of my script."
+	tput setaf 9
 	echo "Make sure you have a stable and fast Internet connection before proceeding!!!"
 	tput setaf 3
 	echo "Press 1 to perform a Full Install (All User Packages)"
 	echo "Press 2 to perform a Minimal Install (Essentials)"
+	echo "Press 3 to view instructions for setting up a multi-user system"
 	tput setaf 9
 	echo "Press Q to quit"
 	tput sgr0
@@ -89,9 +93,24 @@ mainmenu () {
 	case $(echo "$answer" | tr A-Z a-z) in
 		1)	full;;
 		2)	minimal;;
+		3)	multiusermenu;;
 		q)	quitscript;;
 		*)	badoption;;
 	esac
+}
+multiusermenu () {
+	clear
+ 	tput setaf 3
+	echo "==========================================="
+	echo " --- Instructions for Multi-User Setup ---"
+	echo "==========================================="
+	tput setaf 9
+	echo "If you want to set up multiple user accounts on your computer, please run the script again on each new user account. Make sure that additional user accounts are set to Administrator. You can set accounts back to Standard after completing setup."
+	tput sgr0
+	echo "Hit any key to return to the main menu:"
+	IFS=""
+	read -sN1 answer
+	mainmenu
 }
 quitscript () {
 	tput sgr0
@@ -127,7 +146,7 @@ full () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack lsp-plugins tree telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop transmission curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo
+	sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack lsp-plugins tree telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop transmission curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo add-apt-repository -y ppa:linuxuprising/java
 	sudo apt install -y oracle-java17-installer --install-recommends
@@ -145,6 +164,11 @@ full () {
 	flatpak install -y flathub org.shotcut.Shotcut
 	flatpak install -y flathub net.minetest.Minetest
 	flatpak install -y flathub org.inkscape.Inkscape
+	flatpak install -y flathub ar.xjuan.Cambalache
+	flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	flatpak install -y flathub org.kde.okular
+	flatpak install -y flathub org.gnome.Epiphany
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
@@ -165,12 +189,16 @@ minimal () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip pulseeffects libreoffice-style-sukapura cpu-x hardinfo
+	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip pulseeffects libreoffice-style-sukapura cpu-x hardinfo bijiben
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
 	sudo apt update -y
 	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
+	flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	flatpak install -y flathub org.kde.okular
+	flatpak install -y flathub org.gnome.Epiphany
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip speedtest-cli -U
