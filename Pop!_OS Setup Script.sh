@@ -60,7 +60,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 4.11 ---"
+	echo " --- Pop!_OS Setup Script 4.12 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.10"
 	tput setaf 10
@@ -169,6 +169,9 @@ full () {
 	flatpak install -y flathub com.github.muriloventuroso.pdftricks
 	flatpak install -y flathub org.kde.okular
 	flatpak install -y flathub org.gnome.Epiphany
+	flatpak install -y flathub com.github.flxzt.rnote
+	flatpak install -y flathub com.github.tchx84.Flatseal
+	flatpak install -y flathub com.mattjakeman.ExtensionManager
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
@@ -199,6 +202,8 @@ minimal () {
 	flatpak install -y flathub com.github.muriloventuroso.pdftricks
 	flatpak install -y flathub org.kde.okular
 	flatpak install -y flathub org.gnome.Epiphany
+	flatpak install -y flathub com.github.tchx84.Flatseal
+	flatpak install -y flathub com.mattjakeman.ExtensionManager
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip speedtest-cli -U
