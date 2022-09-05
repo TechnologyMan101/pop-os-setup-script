@@ -4,19 +4,19 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 4.12
+Version 5.0
 
-Supported Pop!_OS Versions: 20.04 LTS, 21.10
+Supported Pop!_OS Versions: 22.04 LTS
 
 **Please Run Script After Following Instructions Here**
 
-**The Extras folder also contains other tools you may want including font packs.**
+<ins>_**Make sure to update your system using the system’s software center and reboot before performing any tasks here and running the script. Failing to do so may result in severe breakage!!!**_</ins>
+
+**The Extras folder also contains other tools you may want.**
 
 Please install .deb files and files using other types of installation formats using files manually (if you have them).
 
-Please copy the Essential Font Pack from Extras at https://mega.nz/folder/sBwwxBTR#zf6d3UaJYnNGl5tXaN63ag into `/usr/share/fonts/` Use `sudo nautilus` to open the file manager as root. This is required to perform these actions as this is modifying files on the system level. Before copying the font pack to the fonts folder, check that the folder permissions are all on “Create and delete files.”
-
-Please add yourself to `vboxusers` using `sudo usermod -aG vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed.
+Please add yourself to `vboxusers` using `sudo usermod -aG vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed. Since VirtualBox is installed as a DEB package on this distro, make sure to run it before the script and after installing VirtualBox if you choose to install VirtualBox. 
 
 
 # Keyboard Shortcuts:
@@ -52,4 +52,4 @@ Install using Extension Manager.
 
 # VM Users
 
-Minimal Install is recommended. VM Tools can be found at https://mega.nz/folder/sBwwxBTR#zf6d3UaJYnNGl5tXaN63ag in Extras.
+Minimal Install is recommended. VM Tools can be found at https://mega.nz/folder/sBwwxBTR#zf6d3UaJYnNGl5tXaN63ag in Extras or at https://github.com/TechnologyMan101/script-extras/releases.
