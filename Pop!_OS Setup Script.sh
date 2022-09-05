@@ -1,5 +1,10 @@
 #!/bin/bash
+clear
 # Start of Function Cluster
+tput setaf 3
+echo "Initializing functions..."
+sleep 1.5
+tput setaf 10
 checkcompatibility () {
 	# Set variables
 	. /etc/os-release
@@ -20,12 +25,13 @@ checkcompatibility () {
 		"groovy")	poposverno="20.10";;
 		"hirsute")	poposverno="21.04";;
 		"impish")	poposverno="21.10";;
+        "jammy")    poposverno="22.04 LTS";;
 		*)	poposverno="UNDEFINED, Contact maintainer";;
 	esac
 	# End cluster
 
-	# Check for 20.04 and 21.04
-	if ! grep -qie "focal" -e "impish" /etc/os-release
+	# Check for 22.04 LTS
+	if ! grep -qi "jammy" /etc/os-release
 	then
 		sysreqfail
 	fi
@@ -36,10 +42,11 @@ checkcompatibility () {
 		sysreqfail
 	fi
 }
+echo "Loaded checkcompatibility."
 sysreqfail () {
 	clear
 	tput setaf 9
-	echo "System requirements not met. This script supports x86_64 versions of Pop!_OS with versions 20.04 LTS and 21.04!!!"
+	echo "System requirements not met. This script supports x86_64 versions of Pop!_OS 22.04 LTS!!!"
 	tput setaf 3
 	echo "If your error is not caused by a wrong Pop!_OS version or OS architecture, please check to see if I have published a script for your system."
 	tput setaf 10
@@ -56,13 +63,14 @@ sysreqfail () {
 	read -sN1 answer
 	quitscript
 }
+echo "Loaded sysreqfail."
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "==================================="
-	echo " --- Pop!_OS Setup Script 4.12 ---"
-	echo "==================================="
-	echo "Supported Pop!_OS Versions (x86_64): 20.04 LTS, 21.10"
+	echo "=================================="
+	echo " --- Pop!_OS Setup Script 5.0 ---"
+	echo "=================================="
+	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	tput setaf 10
 	echo "Your current distro is $PRETTY_NAME."
 	echo "Your current Pop!_OS version is $poposverno (Codename: $UBUNTU_CODENAME)."
@@ -77,7 +85,7 @@ mainmenu () {
 	echo "System will automatically reboot after the script is run!!!"
 	echo "It is not recommended to run this script more than once!!!"
 	tput setaf 10
-	echo "You may run this script again after an upgrade or to get your system up-to-date with the latest version of my script."
+	echo "You may run this script again after a failure, an upgrade, or to get your system up-to-date with the latest version of my script."
 	tput setaf 9
 	echo "Make sure you have a stable and fast Internet connection before proceeding!!!"
 	tput setaf 3
@@ -98,6 +106,7 @@ mainmenu () {
 		*)	badoption;;
 	esac
 }
+echo "Loaded mainmenu."
 multiusermenu () {
 	clear
  	tput setaf 3
@@ -112,11 +121,13 @@ multiusermenu () {
 	read -sN1 answer
 	mainmenu
 }
+echo "Loaded multiusermenu."
 quitscript () {
 	tput sgr0
 	clear
 	exit
 }
+echo "Loaded quitscript."
 badoption () {
 	clear
 	tput setaf 9
@@ -127,6 +138,7 @@ badoption () {
 	sleep 3
 	mainmenu
 }
+echo "Loaded badoption."
 finish () {
 	clear
 	tput setaf 10
@@ -138,52 +150,59 @@ finish () {
 	clear
 	sudo reboot
 }
+echo "Loaded finish."
 full () {
 	clear
 	tput setaf 3
 	echo "Full Install/All User Packages..."
 	tput sgr0
 	sleep 3
-	clear
+    clear
 	common
-	sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack lsp-plugins tree telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop transmission curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben
-	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
-	sudo add-apt-repository -y ppa:linuxuprising/java
-	sudo apt install -y oracle-java17-installer --install-recommends
+	runcheck sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack lsp-plugins tree telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell gnome-books krita gnome-clocks gimp htop curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben mcomix gscan2pdf supertuxkart unzip
+	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386
+	runcheck sudo add-apt-repository -y ppa:linuxuprising/java
+	runcheck sudo apt install -y oracle-java17-installer --install-recommends
 	java -version
 	sleep 3
-	sudo add-apt-repository -y ppa:mkusb/ppa
-	sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
-	sudo add-apt-repository -y ppa:obsproject/obs-studio
-	sudo apt install -y obs-studio
-	sudo apt update -y
-	sudo apt full-upgrade -y --allow-downgrades
-	sudo apt autoremove -y --purge
-	sudo apt autoclean -y
-	flatpak install -y flathub org.audacityteam.Audacity
-	flatpak install -y flathub org.shotcut.Shotcut
-	flatpak install -y flathub net.minetest.Minetest
-	flatpak install -y flathub org.inkscape.Inkscape
-	flatpak install -y flathub ar.xjuan.Cambalache
-	flatpak install -y flathub com.github.jeromerobert.pdfarranger
-	flatpak install -y flathub com.github.muriloventuroso.pdftricks
-	flatpak install -y flathub org.kde.okular
-	flatpak install -y flathub org.gnome.Epiphany
-	flatpak install -y flathub com.github.flxzt.rnote
-	flatpak install -y flathub com.github.tchx84.Flatseal
-	flatpak install -y flathub com.mattjakeman.ExtensionManager
-	flatpak update -y
-	flatpak uninstall -y --unused --delete-data
-	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
+	runcheck sudo add-apt-repository -y ppa:mkusb/ppa
+	runcheck sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
+	runcheck sudo add-apt-repository -y ppa:obsproject/obs-studio
+	runcheck sudo apt install -y obs-studio
+	runcheck sudo apt update -y
+	runcheck sudo apt full-upgrade -y --allow-downgrades
+	runcheck sudo apt autoremove -y --purge
+	runcheck sudo apt autoclean -y
+	runcheck flatpak install -y flathub org.audacityteam.Audacity
+	runcheck flatpak install -y flathub org.shotcut.Shotcut
+	runcheck flatpak install -y flathub net.minetest.Minetest
+	runcheck flatpak install -y flathub org.inkscape.Inkscape
+	runcheck flatpak install -y flathub ar.xjuan.Cambalache
+	runcheck flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	runcheck flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	runcheck flatpak install -y flathub org.kde.okular
+	runcheck flatpak install -y flathub com.github.flxzt.rnote
+	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
+	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
+	runcheck flatpak install -y flathub com.github.wwmm.easyeffects
+	runcheck flatpak install -y flathub com.wps.Office
+	runcheck flatpak install -y flathub app.drey.EarTag
+	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
+	runcheck flatpak uninstall -y --unused --delete-data
+	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader pillow py7zr animdl -U
+	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
-	sudo usermod -aG cdrom $USER
+	runcheck sudo usermod -aG cdrom $USER
 	echo "Patching LSP icons..."
+    # The next command makes sure the directory exists. It is normal for it to fail. Runcheck is not needed here. 
 	mkdir ~/.local/share/applications
-	echo "[Desktop Entry]
+	runcheck echo "[Desktop Entry]
 	Hidden=true" > /tmp/1
-	find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+	runcheck find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+	autofontinstall
 	finish
 }
+echo "Loaded full."
 minimal () {
 	clear
 	tput setaf 3
@@ -192,33 +211,86 @@ minimal () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip pulseeffects libreoffice-style-sukapura cpu-x hardinfo bijiben
-	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
-	sudo apt update -y
-	sudo apt full-upgrade -y --allow-downgrades
-	sudo apt autoremove -y --purge
-	sudo apt autoclean -y
-	flatpak install -y flathub com.github.jeromerobert.pdfarranger
-	flatpak install -y flathub com.github.muriloventuroso.pdftricks
-	flatpak install -y flathub org.kde.okular
-	flatpak install -y flathub org.gnome.Epiphany
-	flatpak install -y flathub com.github.tchx84.Flatseal
-	flatpak install -y flathub com.mattjakeman.ExtensionManager
-	flatpak update -y
-	flatpak uninstall -y --unused --delete-data
-	pip3 install pip speedtest-cli -U
+	runcheck sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gnome-tweaks gpart network-manager-openvpn-gnome ffmpeg gufw dconf-editor deja-dup gnome-sushi unoconv ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben gscan2pdf unzip
+	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386
+	runcheck sudo apt update -y
+	runcheck sudo apt full-upgrade -y --allow-downgrades
+	runcheck sudo apt autoremove -y --purge
+	runcheck sudo apt autoclean -y
+	runcheck flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	runcheck flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	runcheck flatpak install -y flathub org.kde.okular
+	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
+	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
+	runcheck flatpak install -y flathub com.github.wwmm.easyeffects
+	runcheck flatpak install -y flathub com.wps.Office
+	runcheck flatpak update -y
+	runcheck flatpak uninstall -y --unused --delete-data
+	runcheck pip3 install pip wheel speedtest-cli -U
+    runcheck pip3 cache purge
 	echo "Patching LSP icons..."
+    # The next command makes sure the directory exists. It is normal for it to fail. 
 	mkdir ~/.local/share/applications
-	echo "[Desktop Entry]
+    runcheck echo "[Desktop Entry]
 	Hidden=true" > /tmp/1
-	find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+	runcheck find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+	autofontinstall
 	finish
 }
+echo "Loaded minimal."
 common () {
-	sudo apt update -y
-	sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg
-	sudo dpkg-reconfigure libdvd-pkg
+	runcheck sudo apt update -y
+	runcheck sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg libheif1 libquicktime2 heif-gdk-pixbuf
+	runcheck sudo dpkg-reconfigure libdvd-pkg
 }
+echo "Loaded common."
+autofontinstall () {
+	echo "Installing the Essential Font Pack..."
+	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20220822-0943/Essential.Font.Pack.zip"
+	runcheck sudo unzip -o "/tmp/fontinstall.zip" -d "/usr/share/fonts"
+	runcheck sudo chmod -R 755 "/usr/share/fonts/Essential Font Pack"
+	runcheck sudo rm "/tmp/fontinstall.zip"
+}
+echo "Loaded autofontinstall."
+runcheck () {
+	IFS=$'\n'
+	command="$*"
+	retval=1
+	attempt=1
+	until [[ $retval -eq 0 ]] || [[ $attempt -gt 5 ]]; do
+		(
+			set +e
+			$command
+		)
+		retval=$?
+		attempt=$(( $attempt + 1 ))
+		if [[ $retval -ne 0 ]]; then
+			clear
+			tput setaf 9
+			echo "Oops! Something went wrong! Retrying in 3 seconds..."
+			tput sgr0
+			sleep 3
+			clear
+		fi
+	done
+	if [[ $retval -ne 0 ]] && [[ $attempt -gt 5 ]]; then
+		clear
+		tput setaf 9
+		echo "Oops! A fatal error has occurred and the program cannot continue. Returning to the main menu in 10 seconds..."
+		tput setaf 3
+		echo "Please try again later or if the problem persists, create an issue on GitHub."
+		tput sgr0
+		sleep 10
+		clear
+		mainmenu
+	fi
+	IFS=""
+}
+echo "Loaded runcheck."
+tput setaf 3
+echo "Continuing..."
+tput sgr0
+sleep 1.5
 # End of Function Cluster
 # Start of Main Script
 while true
