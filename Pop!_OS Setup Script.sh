@@ -68,7 +68,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 5.1 ---"
+	echo " --- Pop!_OS Setup Script 5.2 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	tput setaf 10
@@ -246,7 +246,7 @@ common () {
 echo "Loaded common."
 autofontinstall () {
 	echo "Installing the Essential Font Pack..."
-	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20220822-0943/Essential.Font.Pack.zip"
+	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20221012-1521/Essential.Font.Pack.zip"
 	runcheck sudo unzip -o "/tmp/fontinstall.zip" -d "/usr/share/fonts"
 	runcheck sudo chmod -R 755 "/usr/share/fonts/Essential Font Pack"
 	runcheck sudo rm "/tmp/fontinstall.zip"
