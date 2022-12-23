@@ -68,7 +68,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 5.0 ---"
+	echo " --- Pop!_OS Setup Script 5.1 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	tput setaf 10
@@ -189,7 +189,7 @@ full () {
 	runcheck flatpak install -y flathub app.drey.EarTag
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak uninstall -y --unused --delete-data
-	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader pillow py7zr animdl -U
+	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
 	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
 	runcheck sudo usermod -aG cdrom $USER
