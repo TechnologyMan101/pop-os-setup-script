@@ -4,7 +4,7 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 5.2
+Version 5.3
 
 Supported Pop!_OS Versions: 22.04 LTS
 
