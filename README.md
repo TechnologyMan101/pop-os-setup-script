@@ -4,9 +4,11 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 5.3
+Version 5.4
 
 Supported Pop!_OS Versions: 22.04 LTS
+
+Recommended Free Space: 40 GB
 
 **Please Run Script After Following Instructions Here**
 
