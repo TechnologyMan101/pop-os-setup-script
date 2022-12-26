@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 5.5 ---"
+	echo " --- Pop!_OS Setup Script 5.6 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -199,6 +199,8 @@ full () {
 	runcheck sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
 	runcheck sudo add-apt-repository -y ppa:obsproject/obs-studio
 	runcheck sudo apt install -y obs-studio
+	runcheck sudo apt update -y
+	runcheck sudo apt install -y --only-upgrade obs-studio
 	runcheck sudo apt update -y
 	runcheck sudo apt full-upgrade -y --allow-downgrades
 	runcheck sudo apt autoremove -y --purge
