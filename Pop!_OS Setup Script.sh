@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "=================================="
-	echo " --- Pop!_OS Setup Script 5.6 ---"
+	echo " --- Pop!_OS Setup Script 5.7 ---"
 	echo "=================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -114,9 +114,8 @@ mainmenu () {
 	echo "You are encouraged to modify this script for your own needs."
 	tput setaf 9
 	echo "System will automatically reboot after the script is run!!!"
-	echo "It is not recommended to run this script more than once!!!"
 	tput setaf 10
-	echo "You may run this script again after a failure, an upgrade, or to get your system up-to-date with the latest version of my script."
+	echo "Please run this script again after a major system upgrade."
 	tput setaf 9
 	echo "Make sure you have a stable and fast Internet connection before proceeding!!!"
 	tput setaf 3
@@ -145,7 +144,7 @@ multiusermenu () {
 	echo " --- Instructions for Multi-User Setup ---"
 	echo "==========================================="
 	tput setaf 9
-	echo "If you want to set up multiple user accounts on your computer, please run the script again on each new user account. Make sure that additional user accounts are set to Administrator. You can set accounts back to Standard after completing setup."
+	echo "If you want to set up multiple user accounts on your computer, please run the script again with the same options on each new user account. Make sure that additional user accounts are set to Administrator. You can set accounts back to Standard after completing setup."
 	tput sgr0
 	echo "Hit any key to return to the main menu:"
 	IFS=""
