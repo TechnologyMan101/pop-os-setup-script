@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.11 ---"
+	echo " --- Pop!_OS Setup Script 5.12 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -221,6 +221,7 @@ full () {
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
 	runcheck flatpak install -y flathub org.kde.kid3
+	runcheck flatpak install flathub -y org.kde.subtitlecomposer
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
 	runcheck pip3 cache purge
