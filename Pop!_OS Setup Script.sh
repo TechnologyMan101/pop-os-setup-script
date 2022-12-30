@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.10 ---"
+	echo " --- Pop!_OS Setup Script 5.11 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -261,7 +261,7 @@ minimal () {
 echo "Loaded minimal."
 common () {
 	runcheck sudo apt update -y
-	runcheck sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg libheif1 libquicktime2 heif-gdk-pixbuf heif-thumbnailer
+	runcheck sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg libheif1 libheif-examples libquicktime2 heif-gdk-pixbuf heif-thumbnailer
 	runcheck sudo dpkg-reconfigure libdvd-pkg
 }
 echo "Loaded common."
