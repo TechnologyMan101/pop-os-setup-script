@@ -191,7 +191,7 @@ full () {
 	common
 	runcheck sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack tree telegram-desktop gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell krita gnome-clocks gimp htop curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben mcomix gscan2pdf supertuxkart unzip gsmartcontrol
 	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386
-	runcheck sudo apt install -y default-jdk
+	runcheck sudo apt install -y openjdk-17-jdk
 	java -version
 	sleep 3
 	runcheck sudo add-apt-repository -y ppa:mkusb/ppa
