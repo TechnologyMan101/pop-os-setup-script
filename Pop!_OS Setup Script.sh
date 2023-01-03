@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.12 ---"
+	echo " --- Pop!_OS Setup Script 5.14 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -196,6 +196,8 @@ full () {
 	sleep 3
 	runcheck sudo add-apt-repository -y ppa:mkusb/ppa
 	runcheck sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
+	runcheck sudo add-apt-repository -y ppa:ubuntuhandbook1/dvdstyler
+	runcheck sudo apt install -y dvdstyler
 	runcheck sudo add-apt-repository -y ppa:obsproject/obs-studio
 	runcheck sudo apt install -y obs-studio
 	runcheck sudo apt update -y
