@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.14 ---"
+	echo " --- Pop!_OS Setup Script 5.15 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -198,10 +198,6 @@ full () {
 	runcheck sudo apt install -y mkusb mkusb-nox usb-pack-efi gparted
 	runcheck sudo add-apt-repository -y ppa:ubuntuhandbook1/dvdstyler
 	runcheck sudo apt install -y dvdstyler
-	runcheck sudo add-apt-repository -y ppa:obsproject/obs-studio
-	runcheck sudo apt install -y obs-studio
-	runcheck sudo apt update -y
-	runcheck sudo apt install -y --only-upgrade obs-studio
 	runcheck sudo apt update -y
 	runcheck sudo apt full-upgrade -y --allow-downgrades
 	runcheck sudo apt autoremove -y --purge
@@ -223,7 +219,8 @@ full () {
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
 	runcheck flatpak install -y flathub org.kde.kid3
-	runcheck flatpak install flathub -y org.kde.subtitlecomposer
+	runcheck flatpak install -y flathub org.kde.subtitlecomposer
+	runcheck flatpak install -y flathub com.obsproject.Studio
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
 	runcheck pip3 cache purge
