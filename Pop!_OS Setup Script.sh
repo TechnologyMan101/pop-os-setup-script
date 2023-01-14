@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.15 ---"
+	echo " --- Pop!_OS Setup Script 5.16 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -203,7 +203,7 @@ full () {
 	runcheck sudo apt autoremove -y --purge
 	runcheck sudo apt autoclean -y
 	runcheck flatpak install -y flathub org.audacityteam.Audacity
-	runcheck flatpak install -y flathub org.shotcut.Shotcut
+	runcheck flatpak install -y flathub org.pitivi.Pitivi
 	runcheck flatpak install -y flathub net.minetest.Minetest
 	runcheck flatpak install -y flathub org.inkscape.Inkscape
 	runcheck flatpak install -y flathub ar.xjuan.Cambalache
