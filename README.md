@@ -4,7 +4,7 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 5.16
+Version 5.16.1
 
 Supported Pop!_OS Versions: 22.04 LTS
 
@@ -43,9 +43,8 @@ This is to be done after running the script!!!
 
 Install using Extension Manager. 
 
-- Caffeine - eon
-- Lock Keys - kazimieras.vaina
-- User Themes - fmuellner
+- Caffeine - eon (disable Notifications)
+- Lock Keys - kazimieras.vaina (set Indicator Style to Show/Hide)
 
 
 # Media Shortcuts Image:
