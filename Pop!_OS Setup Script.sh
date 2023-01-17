@@ -96,9 +96,9 @@ echo "Loaded sysreqfail."
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.16 ---"
-	echo "==================================="
+	echo "====================================="
+	echo " --- Pop!_OS Setup Script 5.16.1 ---"
+	echo "====================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
 	tput setaf 10
