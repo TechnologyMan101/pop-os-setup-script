@@ -4,7 +4,7 @@ Bash script to set up a fresh install of Pop!_OS.
 
 # Documentation
 
-Version 5.17
+Version 5.17.1
 
 Supported Pop!_OS Versions: 22.04 LTS
 
@@ -54,3 +54,8 @@ Install using Extension Manager.
 # VM Users
 
 Minimal Install is recommended. VM Tools can be found at https://mega.nz/folder/sBwwxBTR#zf6d3UaJYnNGl5tXaN63ag in Extras or at https://github.com/TechnologyMan101/script-extras/releases.
+
+
+# Other Notes
+
+NVIDIA users must install Pop!_OS using the NVIDIA ISO. 
