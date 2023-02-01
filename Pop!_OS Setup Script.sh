@@ -96,9 +96,9 @@ echo "Loaded sysreqfail."
 mainmenu () {
 	clear
  	tput setaf 3
-	echo "====================================="
-	echo " --- Pop!_OS Setup Script 5.17.1 ---"
-	echo "====================================="
+	echo "==================================="
+	echo " --- Pop!_OS Setup Script 5.18 ---"
+	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
 	tput setaf 10
@@ -214,7 +214,7 @@ full () {
 	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
 	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
 	runcheck flatpak install -y flathub com.github.wwmm.easyeffects
-	runcheck flatpak install -y flathub com.wps.Office
+	runcheck flatpak install -y flathub org.onlyoffice.desktopeditors
 	runcheck flatpak install -y flathub app.drey.EarTag
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
@@ -250,7 +250,7 @@ minimal () {
 	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
 	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
 	runcheck flatpak install -y flathub com.github.wwmm.easyeffects
-	runcheck flatpak install -y flathub com.wps.Office
+	runcheck flatpak install -y flathub org.onlyoffice.desktopeditors
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel speedtest-cli -U
