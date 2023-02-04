@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.19 ---"
+	echo " --- Pop!_OS Setup Script 5.20 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -218,7 +218,7 @@ full () {
 	runcheck flatpak install -y flathub app.drey.EarTag
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
-	runcheck flatpak install -y flathub org.kde.kid3
+	runcheck flatpak install -y flathub org.musicbrainz.Picard
 	runcheck flatpak install -y flathub org.kde.subtitlecomposer
 	runcheck flatpak install -y flathub com.obsproject.Studio
 	runcheck flatpak install -y flathub org.telegram.desktop
@@ -227,6 +227,7 @@ full () {
 	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
 	runcheck sudo usermod -aG cdrom $USER
+	appendbashrc1
 	autofontinstall
 	finish
 }
@@ -256,6 +257,7 @@ minimal () {
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel speedtest-cli -U
     runcheck pip3 cache purge
+    appendbashrc2
 	autofontinstall
 	finish
 }
@@ -266,9 +268,42 @@ common () {
 	runcheck sudo dpkg-reconfigure libdvd-pkg
 }
 echo "Loaded common."
+appendbashrcinfo () {
+	clear
+ 	tput setaf 3
+	echo "===================================="
+	echo " --- Information on CLI Aliases ---"
+	echo "===================================="
+	echo "The 'sysupdate' alias will be added to your user profile. This is an alias that updates the computer more thoroughly. It is recommended to run this every week. This alias does not handle major system upgrades. To use this alias, run 'sysupdate' in a terminal."
+	tput sgr0
+	echo "Press any key to continue"
+	IFS=""
+	read -sN1 answer
+	clear
+}
+echo "Loaded appendbashrcinfo."
+appendbashrc1 () {
+	appendbashrcinfo
+	echo "Adding sysupdate alias and neofetch to .bashrc..."
+	runcheck sed -i '/sysupdate/d' ~/.bashrc
+	runcheck echo 'alias sysupdate="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y --purge && sudo apt autoclean -y && flatpak update -y && flatpak uninstall -y --unused --delete-data && pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U && pip3 cache purge"' >> ~/.bashrc
+	runcheck sed -i '/neofetch/d' ~/.bashrc
+	runcheck echo 'neofetch' >> ~/.bashrc
+}
+echo "Loaded appendbashrc1."
+appendbashrc2 () {
+	appendbashrcinfo
+	echo "Adding sysupdate alias and neofetch to .bashrc..."
+	runcheck sed -i '/sysupdate/d' ~/.bashrc
+	runcheck echo 'alias sysupdate="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y --purge && sudo apt autoclean -y && flatpak update -y && flatpak uninstall -y --unused --delete-data && pip3 install pip wheel speedtest-cli -U && pip3 cache purge"' >> ~/.bashrc
+	runcheck sed -i '/neofetch/d' ~/.bashrc
+	runcheck echo 'neofetch' >> ~/.bashrc
+}
+echo "Loaded appendbashrc2."
 autofontinstall () {
 	echo "Installing the Essential Font Pack..."
 	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20221012-1521/Essential.Font.Pack.zip"
+	sudo rm -rf "/usr/share/fonts/Essential Font Pack"
 	runcheck sudo unzip -o "/tmp/fontinstall.zip" -d "/usr/share/fonts"
 	runcheck sudo chmod -R 755 "/usr/share/fonts/Essential Font Pack"
 	runcheck sudo rm "/tmp/fontinstall.zip"
