@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.21 ---"
+	echo " --- Pop!_OS Setup Script 5.22 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -189,7 +189,7 @@ full () {
 	sleep 3
     clear
 	common
-	runcheck sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack tree gufw easytag android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell krita gnome-clocks gimp htop curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben mcomix gscan2pdf supertuxkart unzip gsmartcontrol
+	runcheck sudo apt install -y ubuntu-restricted-extras gnome-backgrounds ubuntu-gnome-wallpapers system76-wallpapers synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol rhythmbox shotwell solaar gnome-boxes gparted vlc p7zip-full p7zip-rar gnome-tweaks lame gpart grub2-common neofetch network-manager-openvpn-gnome ffmpeg webhttrack tree gufw android-tools-adb android-tools-fastboot gnome-sound-recorder cheese nikwi supertux dconf-editor deja-dup gnome-todo gnome-sushi unoconv ffmpegthumbs fonts-cantarell krita gnome-clocks gimp htop curl git handbrake gtk-3-examples menulibre nautilus-admin python3-pip libreoffice-style-sukapura cpu-x hardinfo bijiben mcomix gscan2pdf supertuxkart unzip gsmartcontrol
 	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386
 	runcheck sudo apt install -y openjdk-17-jdk
 	java -version
@@ -218,11 +218,12 @@ full () {
 	runcheck flatpak install -y flathub app.drey.EarTag
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
-	runcheck flatpak install -y flathub org.musicbrainz.Picard
+	runcheck flatpak install -y flathub org.kde.kid3
 	runcheck flatpak install -y flathub org.kde.subtitlecomposer
 	runcheck flatpak install -y flathub com.obsproject.Studio
 	runcheck flatpak install -y flathub org.telegram.desktop
 	runcheck flatpak install -y flathub net.lutris.Lutris
+	runcheck flatpak install -y flathub org.kde.kdenlive
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
 	runcheck pip3 cache purge
