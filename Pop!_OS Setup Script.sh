@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.22 ---"
+	echo " --- Pop!_OS Setup Script 5.23 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -229,6 +229,8 @@ full () {
 	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
 	runcheck sudo usermod -aG cdrom $USER
+	echo "Removing Solaar autostart file..."
+	sudo rm /etc/xdg/autostart/solaar.desktop
 	appendbashrc1
 	autofontinstall
 	finish
