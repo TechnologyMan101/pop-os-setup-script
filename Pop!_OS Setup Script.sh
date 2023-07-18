@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.24 ---"
+	echo " --- Pop!_OS Setup Script 5.25 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -224,6 +224,8 @@ full () {
 	runcheck flatpak install -y flathub org.telegram.desktop
 	runcheck flatpak install -y flathub net.lutris.Lutris
 	runcheck flatpak install -y flathub org.kde.kdenlive
+	runcheck flatpak install -y flathub io.missioncenter.MissionCenter
+	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
 	runcheck pip3 cache purge
@@ -257,6 +259,7 @@ minimal () {
 	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
 	runcheck flatpak install -y flathub com.github.wwmm.easyeffects
 	runcheck flatpak install -y flathub org.onlyoffice.desktopeditors
+	runcheck flatpak install -y flathub io.missioncenter.MissionCenter
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel speedtest-cli -U
