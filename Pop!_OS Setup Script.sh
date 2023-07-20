@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.25 ---"
+	echo " --- Pop!_OS Setup Script 5.26 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -225,6 +225,7 @@ full () {
 	runcheck flatpak install -y flathub net.lutris.Lutris
 	runcheck flatpak install -y flathub org.kde.kdenlive
 	runcheck flatpak install -y flathub io.missioncenter.MissionCenter
+	runcheck flatpak install -y flathub org.prismlauncher.PrismLauncher
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
