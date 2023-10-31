@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.26 ---"
+	echo " --- Pop!_OS Setup Script 5.27 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -228,7 +228,7 @@ full () {
 	runcheck flatpak install -y flathub org.prismlauncher.PrismLauncher
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
-	runcheck pip3 install pip wheel yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
+	runcheck pip3 install pip wheel yt-dlp speedtest-cli mangadex-downloader[optional] animdl git+https://github.com/nathom/streamrip.git@dev -U
 	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
 	runcheck sudo usermod -aG cdrom $USER
