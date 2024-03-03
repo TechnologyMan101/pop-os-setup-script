@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.28 ---"
+	echo " --- Pop!_OS Setup Script 5.29 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -310,7 +310,7 @@ appendbashrc2 () {
 echo "Loaded appendbashrc2."
 autofontinstall () {
 	echo "Installing the Essential Font Pack..."
-	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20221012-1521/Essential.Font.Pack.zip"
+	runcheck sudo wget -O "/tmp/fontinstall.zip" "https://github.com/TechnologyMan101/script-extras/releases/download/20240122-2030/Essential.Font.Pack.zip"
 	sudo rm -rf "/usr/share/fonts/Essential Font Pack"
 	runcheck sudo unzip -o "/tmp/fontinstall.zip" -d "/usr/share/fonts"
 	runcheck sudo chmod -R 755 "/usr/share/fonts/Essential Font Pack"
