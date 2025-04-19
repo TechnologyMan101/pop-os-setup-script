@@ -97,7 +97,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "==================================="
-	echo " --- Pop!_OS Setup Script 5.34 ---"
+	echo " --- Pop!_OS Setup Script 5.35 ---"
 	echo "==================================="
 	echo "Supported Pop!_OS Versions (x86_64): 22.04 LTS"
 	echo "Recommended Free Space: 40 GB"
@@ -208,7 +208,6 @@ full () {
 	runcheck flatpak install -y flathub org.inkscape.Inkscape
 	runcheck flatpak install -y flathub ar.xjuan.Cambalache
 	runcheck flatpak install -y flathub com.github.jeromerobert.pdfarranger
-	runcheck flatpak install -y flathub com.github.muriloventuroso.pdftricks
 	runcheck flatpak install -y flathub org.kde.okular
 	runcheck flatpak install -y flathub com.github.flxzt.rnote
 	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
@@ -231,7 +230,7 @@ full () {
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck pip3 install pip wheel -U
-	runcheck pip3 install --pre yt-dlp[default] -U
+	runcheck pip3 install --pre yt-dlp[default,curl-cffi] -U
 	runcheck pip3 cache purge
 	echo "Adding current user to cdrom group..."
 	runcheck sudo usermod -aG cdrom $USER
@@ -257,7 +256,6 @@ minimal () {
 	runcheck sudo apt autoremove -y --purge
 	runcheck sudo apt autoclean -y
 	runcheck flatpak install -y flathub com.github.jeromerobert.pdfarranger
-	runcheck flatpak install -y flathub com.github.muriloventuroso.pdftricks
 	runcheck flatpak install -y flathub org.kde.okular
 	runcheck flatpak install -y flathub com.github.tchx84.Flatseal
 	runcheck flatpak install -y flathub com.mattjakeman.ExtensionManager
@@ -299,7 +297,7 @@ appendbashrc1 () {
 	appendbashrcinfo
 	echo "Adding sysupdate alias and neofetch to .bashrc..."
 	runcheck sed -i '/sysupdate/d' ~/.bashrc
-	runcheck echo 'alias sysupdate="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y --purge && sudo apt autoclean -y && flatpak update -y && flatpak uninstall -y --unused --delete-data && pip3 install pip wheel -U && pip3 install --pre yt-dlp[default] -U && pip3 cache purge"' >> ~/.bashrc
+	runcheck echo 'alias sysupdate="sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y --purge && sudo apt autoclean -y && flatpak update -y && flatpak uninstall -y --unused --delete-data && pip3 install pip wheel -U && pip3 install --pre yt-dlp[default,curl-cffi] -U && pip3 cache purge"' >> ~/.bashrc
 	runcheck sed -i '/neofetch/d' ~/.bashrc
 	runcheck echo 'neofetch' >> ~/.bashrc
 }
