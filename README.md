@@ -1,6 +1,7 @@
 # Pop!_OS Setup Script
 Bash script to set up a fresh install of Pop!_OS.
 
+# This script is no longer maintained. 
 
 # Documentation
 
